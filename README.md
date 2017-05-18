@@ -10,9 +10,11 @@
 
 ### TODO
 
-- [X] Log In and Register with `firebase1
-- [X] Nest Navigation with `react-navigation`
+- [X] Log In and Register with `firebase`
+- [X] Nested Navigation with `react-navigation`
 - [X] Build User form and Authentication
 - [ ] More form validation
 - [ ] Build Chat functionality
+- [ ] Video Chat
+- [ ] CRUDS for user/contacts/chats
 - [ ] Better animation/transition between screens
