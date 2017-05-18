@@ -27,6 +27,12 @@ class Register extends React.Component {
     loading: false
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.auth.error !== '') {
+      this.setState({ loading: false, error: nextProps.auth.error });
+    }
+  }
+
   validEmail(email) {
     return /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(email);
   }
@@ -50,7 +56,7 @@ class Register extends React.Component {
   }
 
   handleSubmit = () => {
-    this.setState({ loading: true });
+    this.setState({ loading: true, error: '' });
     const { email, password, displayName } = this.state;
     this.props.createUser(email, password, displayName);
   }
@@ -141,7 +147,7 @@ const styles = StyleSheet.create({
     marginTop: 25
   },
   heading: {
-    marginBottom: 20
+    marginBottom: 10
   },
   headingText: {
     textAlign: 'center',

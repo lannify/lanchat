@@ -147,7 +147,7 @@ const styles = {
     marginTop: 35
   },
   heading: {
-    marginBottom: 20
+    marginBottom: 10
   },
   headingText: {
     textAlign: 'center',

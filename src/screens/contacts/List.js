@@ -5,6 +5,7 @@ import { Ionicons } from '@expo/vector-icons';
 class List extends React.Component {
    static navigationOptions = ({ navigation }) => ({
       title: 'Contacts',
+      headerLeft: null,  
       tabBarIcon: <Ionicons name='ios-contacts' size={26} color='#fff' />
    });
 

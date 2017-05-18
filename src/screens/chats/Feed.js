@@ -27,6 +27,7 @@ class Feed extends React.Component {
 
     static navigationOptions = ({ navigation }) => ({
       title: 'Chats',
+      headerLeft: null, 
       tabBarIcon: <Ionicons name='ios-chatbubbles' size={26} color='#fff' />
     });
 

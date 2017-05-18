@@ -6,7 +6,8 @@ import {
 } from '../actions/types';
 
 const initialState = {  
-  user: null
+  user: null, 
+  error: ''
 };
 
 export default (state = initialState, action) => {
@@ -14,9 +15,9 @@ export default (state = initialState, action) => {
     case FETCH_USER_SUCCESS:
       return { user: action.payload };
     case FETCH_USER_FAIL:
-      return { error: action.payload };
+      return { user: null, error: action.payload };
     case UPDATE_USER_SUCCESS:
-      return { user: action.payload };
+      return { user: action.payload, error: '' };
     case UPDATE_USER_FAIL:
       return { error: action.payload };
     default: 

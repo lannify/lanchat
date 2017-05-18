@@ -7,13 +7,19 @@ import { connect } from 'react-redux';
 import firebase from 'firebase';
 
 import { fetchUser } from '../../actions';
-import { BRAND_BLUE } from '../../styles';
+import { BRAND_BLUE, buttonSecondary } from '../../styles';
 
 class Profile extends React.Component {
-   static navigationOptions = ({ navigation }) => ({
+   static navigationOptions = ({ navigation }) => ({   
       title: 'Profile',
       tabBarIcon: <Ionicons name='md-contact' size={26} color='#fff' />,
-      headerLeft: null
+      headerLeft: null,
+      headerRight: <Icon 
+                      name='edit' 
+                      color='#fff' 
+                      iconStyle={{ marginRight: 14 }}
+                      onPress={() => navigation.navigate('editProfile')}
+                   />
    });
 
    state = { 
@@ -49,10 +55,12 @@ class Profile extends React.Component {
           <Text style={styles.textStyle}>Email: {this.state.email}</Text>
           <Text style={styles.textStyle}>Display Name: {this.state.displayName}</Text>
         </Card>
+
         <Button 
           title='LOG OUT'
-          backgroundColor={BRAND_BLUE}
-          buttonStyle={styles.buttonStyle}
+          backgroundColor={'rgba(0,0,0,0)'}
+          buttonStyle={[styles.buttonStyle, buttonSecondary]}
+          textStyle={{ color: BRAND_BLUE }}
           onPress={this.onButtonPress}
         />
       </View>
@@ -71,7 +79,7 @@ const styles = StyleSheet.create({
     marginTop: 15
   },
   buttonStyle: {
-    marginTop: 20
+    marginTop: 10
   }
 });
 

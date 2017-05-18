@@ -47,7 +47,17 @@ export const createUser = (email, password, displayName) => async (dispatch) => 
 
         dispatch({ type: CREATE_USER_SUCCESS, payload: userDetail });
     } catch (error) {
-        let errorMessage = 'Cannot create new account. Please try again.';
+        console.log(error)
+        let errorMessage = '';
+        console.log(error.code)
+        switch (error.code) {
+            case 'auth/email-already-in-use':
+                errorMessage = 'Email is already in use.'
+                break;
+            default: 
+                errorMessage = 'Cannot create new account. Please try again.';
+        }   
+        
 
         dispatch({ type: CREATE_USER_FAIL, payload: errorMessage });
     } 
