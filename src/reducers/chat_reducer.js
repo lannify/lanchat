@@ -1,0 +1,22 @@
+import {
+  CREATE_CHAT_SUCCESS,
+  CREATE_CHAT_FAIL,
+  FETCH_CHATS_SUCCESS,
+  FETCH_CHATS_FAIL
+} from '../actions/types';
+
+const initialState = {
+  chat: null,
+  error: ''
+};
+
+export default (state = initialState, action) => {
+  switch (action.type) {
+    case 'CREATE_CHAT_SUCCESS':
+      return { error: '' };
+    case 'CREATE_CHAT_FAIL':
+      return { error: action.payload };
+    default: 
+      return state;
+  }
+};

@@ -7,6 +7,8 @@ export const CREATE_USER_FAIL       = 'create_user_fail';
 
 export const CREATE_CHAT_SUCCESS    = 'create_chat_success';
 export const CREATE_CHAT_FAIL       = 'create_chat_fail';
+export const FETCH_CHATS_SUCCESS    = 'fetch_chats_success';
+export const FETCH_CHATS_FAIL       = 'fetch_chats_fail';
 
 export const CREATE_CONTACT_SUCCESS = 'create_contact_success';
 export const CREATE_CONTACT_FAIL    = 'create_contact_fail';
