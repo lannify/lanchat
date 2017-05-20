@@ -13,7 +13,6 @@ import {
 const ContactItem = ({ contact }) => {
   const { name, uid } = contact;
 
-
   return (
     <ListItem
       key={uid}
